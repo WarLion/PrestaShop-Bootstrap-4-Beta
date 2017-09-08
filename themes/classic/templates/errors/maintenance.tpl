@@ -29,7 +29,7 @@
   <section id="main">
 
     {block name='page_header_container'}
-      <header class="page-header">
+      <header class="page-header m-sm-3">
         {block name='page_header_logo'}
         <div class="logo"><img src="{$shop.logo}" alt="logo"></div>
         {/block}

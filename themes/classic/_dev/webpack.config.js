@@ -79,9 +79,15 @@ let config = {
   externals: {
     prestashop: 'prestashop',
     $: '$',
-    jquery: 'jQuery'
+    jquery: 'jQuery',
+    'window.jQuery': 'jquery'
   },
   plugins: [
+    new webpack.ProvidePlugin({
+      Popper: ['popper.js', 'default'],
+      Util: 'exports-loader?Util!bootstrap/js/dist/util',
+      Dropdown: 'exports-loader?Dropdown!bootstrap/js/dist/dropdown'
+    }),
     new ExtractTextPlugin(path.join('..', 'css', 'theme.css'))
   ]
 };

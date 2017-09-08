@@ -1,11 +1,6 @@
 body#checkout {
   color: $gray-darker;
   #header .header-nav {
-    max-height: none;
-    padding: 5rem 0 0.9375rem;
-    border: none;
-    margin-bottom: 0;
-    @include box-shadow;
     .logo {
       max-height: 4.375rem;
       width: auto;
@@ -146,7 +141,7 @@ body#checkout {
     .address-selector {
       display: flex;
       justify-content: space-between;
-      align-items: flex-start;
+      //align-items: flex-start; //height fix background
       flex-wrap: wrap;
     }
     .address-item {
@@ -273,7 +268,7 @@ body#checkout {
       width: 3.125rem;
     }
     .media-body {
-      vertical-align: middle;
+      align-self: center;
     }
   }
   #order-summary-content {
@@ -342,12 +337,6 @@ body#checkout {
       max-width: 100%;
       margin-bottom: 10px;
     }
-  }
-  #footer {
-    @include box-shadow;
-    padding: 0.9375rem;
-    background: white;
-    color: $gray;
   }
 }
 /**** ORDER CONFIRMATION *****/

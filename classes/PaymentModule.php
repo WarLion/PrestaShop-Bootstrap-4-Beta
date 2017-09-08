@@ -857,11 +857,9 @@ abstract class PaymentModuleCore extends Module
 
                     // sync all stock
                     (new StockManager())->updatePhysicalProductQuantity(
-                        (int)$order->id_shop,
+                        $order->id_shop,
                         (int)Configuration::get('PS_OS_ERROR'),
-                        (int)Configuration::get('PS_OS_CANCELED'),
-                        null,
-                        (int)$order->id
+                        (int)Configuration::get('PS_OS_CANCELED')
                     );
                 } else {
                     $error = $this->trans('Order creation failed', array(), 'Admin.Payment.Notification');

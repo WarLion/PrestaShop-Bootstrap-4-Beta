@@ -27,13 +27,7 @@
   a[data-depth="2"] {
     padding: 0 0.625rem 0.625rem 0;
   }
-  .collapse {
-    display: inherit;
-  }
   .sub-menu {
-    &.collapse {
-      display: none;
-    }
     box-shadow: 2px 1px 11px 2px rgba(0, 0, 0, 0.1);
     border: none;
     margin-left: 0.9375rem;
@@ -88,14 +82,14 @@
     }
     .collapse {
       display: none;
-      &.in {
+      &.show {
         display: block;
       }
     }
     .sub-menu {
       &.collapse {
         display: none;
-        &.in {
+        &.show {
           display: block;
         }
       }

@@ -6,6 +6,7 @@
   }
   .carousel-inner {
     height: 340px;
+    margin-bottom:0;
     @media (max-width: 767px) {
       height: auto;
     }
@@ -44,7 +45,13 @@
       }
     }
   }
-  .carousel-control {
+  .carousel-control-prev {
+      justify-content:left;
+  }
+  .carousel-control-next {
+      justify-content:flex-end;
+  }
+  [class*='carousel-control-'] {
     opacity: 1;
     .icon-next,
     .icon-prev {

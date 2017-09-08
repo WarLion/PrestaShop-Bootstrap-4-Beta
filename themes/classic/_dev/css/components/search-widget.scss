@@ -8,6 +8,8 @@
       input[type="text"] {
         min-width: inherit;
         width: 100%;
+        background:$gray-lighter;
+        border:0;
       }
     }
   }
@@ -44,7 +46,7 @@
         margin: 0 auto;
         input[type="text"] {
           min-width: inherit;
-          background: white;
+          background:$white;
         }
       }
     }

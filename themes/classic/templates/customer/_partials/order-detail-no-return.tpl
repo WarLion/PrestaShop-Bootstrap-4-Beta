@@ -23,7 +23,7 @@
  * International Registered Trademark & Property of PrestaShop SA
  *}
 {block name='order_products_table'}
-  <div class="box hidden-sm-down">
+  <div class="box d-xs-none d-md-inline-flex">
     <table id="order-products" class="table table-bordered">
       <thead class="thead-default">
         <tr>
@@ -116,7 +116,7 @@
     </table>
   </div>
 
-  <div class="order-items hidden-md-up box">
+  <div class="order-items d-md-none box">
     {foreach from=$order.products item=product}
       <div class="order-item">
         <div class="row">
@@ -158,7 +158,7 @@
       </div>
     {/foreach}
   </div>
-  <div class="order-totals hidden-md-up box">
+  <div class="order-totals d-md-none box">
     {foreach $order.subtotals as $line}
       {if $line.value}
         <div class="order-total row">

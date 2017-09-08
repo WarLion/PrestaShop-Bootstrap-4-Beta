@@ -24,7 +24,7 @@
  *}
 
 <div class="block-contact col-md-4 links wrapper">
-  <div class="hidden-sm-down">
+  <div class="d-xs-none d-md-block">
     <h4 class="text-uppercase block-contact-title">{l s='Store information' d='Shop.Theme.Global'}</h4>
       {$contact_infos.address.formatted nofilter}
       {if $contact_infos.phone}
@@ -66,7 +66,7 @@
         }
       {/if}
   </div>
-  <div class="hidden-md-up">
+  <div class="d-md-none">
     <div class="title">
       <a class="h3" href="{$urls.pages.stores}">{l s='Store information' d='Shop.Theme.Global'}</a>
     </div>

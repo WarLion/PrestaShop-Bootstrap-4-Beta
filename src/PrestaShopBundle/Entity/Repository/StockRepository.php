@@ -96,8 +96,10 @@ class StockRepository extends StockManagementRepository
     public function bulkUpdateStock(MovementsCollection $movements)
     {
         $products = $movements->map(function (Movement $movement) {
-            return $this->updateStock($movement);
+            return $this->updateStock($movement, true);
         });
+
+        $this->syncAllStock();
 
         return $products;
     }
@@ -131,7 +133,7 @@ class StockRepository extends StockManagementRepository
             }
 
             if (true === $syncStock) {
-                $this->syncAllStock($productIdentity->getProductId());
+                $this->syncAllStock();
             }
         }
 
@@ -141,13 +143,12 @@ class StockRepository extends StockManagementRepository
     /**
      * Sync all stock with Manager
      */
-    private function syncAllStock($idProduct)
+    private function syncAllStock()
     {
         (new StockManager())->updatePhysicalProductQuantity(
             $this->contextAdapter->getContext()->shop->id,
             $this->orderStates['error'],
-            $this->orderStates['cancellation'],
-            (int)$idProduct
+            $this->orderStates['cancellation']
         );
     }
 
@@ -305,7 +306,6 @@ class StockRepository extends StockManagementRepository
                 pa.id_product_attribute = images_per_combination.combination_id
             )
             LEFT JOIN {table_prefix}image i ON (
-                i.id_product = p.id_product AND
                 COALESCE(FIND_IN_SET(i.id_image, images_per_combination.image_ids), 0) > 0
             )
             LEFT JOIN {table_prefix}supplier s ON (p.id_supplier = s.id_supplier)

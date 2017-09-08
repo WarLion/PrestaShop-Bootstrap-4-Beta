@@ -404,11 +404,9 @@ class OrderHistoryCore extends ObjectModel
 
         // sync all stock
         (new StockManagerAdapter())->updatePhysicalProductQuantity(
-            (int)$order->id_shop,
+            $order->id_shop,
             (int)Configuration::get('PS_OS_ERROR'),
-            (int)Configuration::get('PS_OS_CANCELED'),
-            null,
-            (int)$order->id
+            (int)Configuration::get('PS_OS_CANCELED')
         );
 
         ShopUrl::resetMainDomainCache();

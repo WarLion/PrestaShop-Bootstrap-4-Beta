@@ -41,7 +41,7 @@
         </div>
 
         {block name='product_list_active_filters'}
-          <div id="" class="hidden-sm-down">
+          <div id="" class="d-xs-none d-md-inline-flex">
             {$listing.rendered_active_filters nofilter}
           </div>
         {/block}

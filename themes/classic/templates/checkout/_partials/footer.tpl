@@ -22,8 +22,36 @@
  * @license   https://opensource.org/licenses/AFL-3.0 Academic Free License 3.0 (AFL-3.0)
  * International Registered Trademark & Property of PrestaShop SA
  *}
-{block name='footer'}
-<div class="text-sm-center">
-  {l s='%copyright% %year% - Ecommerce software by %prestashop%' sprintf=['%prestashop%' => 'PrestaShop™', '%year%' => 'Y'|date, '%copyright%' => '©'] d='Shop.Theme.Global'}
+
+<div class="container">
+  <div class="row">
+    {block name='hook_footer_before'}
+      {hook h='displayFooterBefore'}
+    {/block}
+  </div>
 </div>
-{/block}
+<div class="footer-container">
+  <div class="container">
+    <div class="row">
+      {block name='hook_footer'}
+        {hook h='displayFooter'}
+      {/block}
+    </div>
+    <div class="row">
+      {block name='hook_footer_after'}
+        {hook h='displayFooterAfter'}
+      {/block}
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <p class="text-center mt-xs-3">
+          {block name='copyright_link'}
+            <a class="_blank" href="http://www.prestashop.com" target="_blank">
+              {l s='%copyright% %year% - Ecommerce software by %prestashop%' sprintf=['%prestashop%' => 'PrestaShop™', '%year%' => 'Y'|date, '%copyright%' => '©'] d='Shop.Theme.Global'}
+            </a>
+          {/block}
+        </p>
+      </div>
+    </div>
+  </div>
+</div>

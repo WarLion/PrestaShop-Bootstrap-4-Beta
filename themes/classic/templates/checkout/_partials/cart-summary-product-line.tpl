@@ -23,7 +23,7 @@
  * International Registered Trademark & Property of PrestaShop SA
  *}
 {block name='cart_summary_product_line'}
-  <div class="media-left">
+  <div class="media-left mr-2">
     <a href="{$product.url}" title="{$product.name}">
       <img class="media-object" src="{$product.cover.small.url}" alt="{$product.name}">
     </a>

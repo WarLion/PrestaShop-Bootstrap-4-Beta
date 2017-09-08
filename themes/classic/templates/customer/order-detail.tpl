@@ -82,7 +82,7 @@
   {block name='order_history'}
     <section id="order-history" class="box">
       <h3>{l s='Follow your order\'s status step-by-step' d='Shop.Theme.Customeraccount'}</h3>
-      <table class="table table-striped table-bordered table-labeled hidden-xs-down">
+      <table class="table table-striped table-bordered table-labeled d-xs-down">
         <thead class="thead-default">
           <tr>
             <th>{l s='Date' d='Shop.Theme.Global'}</th>
@@ -102,7 +102,7 @@
           {/foreach}
         </tbody>
       </table>
-      <div class="hidden-sm-up history-lines">
+      <div class="d-xs-none d-md-inline-flex history-lines">
         {foreach from=$order.history item=state}
           <div class="history-line">
             <div class="date">{$state.history_date}</div>
@@ -158,7 +158,7 @@
   {block name='order_carriers'}
     {if $order.shipping}
       <div class="box">
-        <table class="table table-striped table-bordered hidden-sm-down">
+        <table class="table table-striped table-bordered d-xs-none d-md-inline-flex">
           <thead class="thead-default">
             <tr>
               <th>{l s='Date' d='Shop.Theme.Global'}</th>
@@ -180,7 +180,7 @@
             {/foreach}
           </tbody>
         </table>
-        <div class="hidden-md-up shipping-lines">
+        <div class="d-md-none shipping-lines">
           {foreach from=$order.shipping item=line}
             <div class="shipping-line">
               <ul>

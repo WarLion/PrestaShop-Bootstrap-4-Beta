@@ -136,6 +136,7 @@
   }
   .addresses-footer {
     margin: 0 0.9375rem;
+    flex:100%;
     a {
       color: $gray-darker;
       &:hover {
@@ -365,4 +366,27 @@
 
 .login-form {
   margin-top: 15px;
+}
+
+.page-customer-account,
+.page-addresses{
+  #content-wrapper {
+      width: 100%;
+  }
+  .wrap-adresses{
+    flex-direction: row;
+    display: flex;
+  }
+}
+
+@include media-breakpoint-down(xs){
+  .page-addresses{
+    .wrap-adresses{
+      flex-direction: column;
+      .col-sm-6{
+        flex:0 0 100%;
+        max-width: 100%;
+      }
+    }
+  }
 }

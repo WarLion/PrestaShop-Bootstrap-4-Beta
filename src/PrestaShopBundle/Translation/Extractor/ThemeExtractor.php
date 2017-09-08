@@ -112,7 +112,7 @@ class ThemeExtractor
             return;
         }
 
-        $defaultCatalogue = $defaultCatalogue->all();
+        $defaultCatalogue = current($defaultCatalogue);
 
         if (empty($defaultCatalogue)) {
             return;

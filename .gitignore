@@ -1,5 +1,8 @@
 # Cache, temp and personal files
 
+themes/singlewave
+themes/singlewave-bs4-b
+
 /.htaccess
 *.log
 npm-debug.log.*
@@ -20,6 +23,10 @@ admin-dev/backups/*
 admin-dev/import/*
 
 admin-dev/import/*
+
+admin123/*
+
+
 !admin-dev/import/.htaccess
 !admin-dev/import/index.php
 
@@ -103,6 +110,7 @@ themes/default-bootstrap/modules/*/mails/*
 
 ### OSX ###
 .DS_Store
+*.DS_Store
 .AppleDouble
 .LSOverride
 
